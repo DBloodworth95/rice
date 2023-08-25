@@ -1,0 +1,13 @@
+#!/bin/sh
+
+monitor0wall=$(find ~/Rice/ -type f -name "wallpaper.png")
+monitor1wall=$(find ~/Rice/ -type f -name "wallpapermonitor1.png")
+# Set wallpaper
+xwallpaper --zoom $monitor0wall
+xwallpaper --output HDMI-0 --zoom $monitor1wall
+# Generate colour scheme
+wal -c
+wal -i $monitor0wall 
+
+xdotool key super+F5
+
