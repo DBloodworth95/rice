@@ -9,12 +9,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 if [ -f $sysresources ]; then
 
-
-
-
-
-
-
     xrdb -merge $sysresources
 
 fi
@@ -24,12 +18,6 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
 
     xrdb -merge "$userresources"
 
@@ -53,5 +41,5 @@ xrandr --output DP-1 --auto --pos 1920x0 &&
 xrandr --output HDMI-0 --auto --pos 1920x0 --right-of DP-1 --rotate right &&
 /home/dan/.local/src/rice/startrice &&
 xcompmgr &
-exec dwm
+exec /home/dan/.local/src/rice/dwm/dwm_init.sh
 
